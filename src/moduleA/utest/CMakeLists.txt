@@ -22,23 +22,28 @@
  #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  #  SOFTWARE.
 
-cmake_minimum_required(VERSION 3.5.0)
-project(bpapp VERSION 0.1.0 LANGUAGES C CXX)
+enable_testing()
 
-# GoogleTest requires at least C++14
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-include(FetchContent)
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+add_executable(
+  utest_moduleA
+  utest_moduleA.cc
 )
 
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
+# Specify include directories for moduleA
+target_include_directories(utest_moduleA PUBLIC ..\${CMAKE_CURRENT_SOURCE_DIR})
 
-# Include the src directory which has its own CMakeLists.txt
-add_subdirectory(src)
+target_link_libraries(
+  utest_moduleA
+  moduleA
+  GTest::gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests(utest_moduleA)
+
+
+
+
+
+
 

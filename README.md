@@ -1,5 +1,11 @@
 # cmake-gtest-cpp-boilerplate: README.md
 
-This repository is a minimalistic VS-Code setup for cmake based projects, including a hello world app, google test framework and one test case
+The repository of this project contains a simple setup of a cpp project
+as blueprint to start use cases  specific projects and showcases how:
+- to use cmake as build environment
+- to setup a modular project structure
+- to use google test to unit test sub modules
+
+
 
 
