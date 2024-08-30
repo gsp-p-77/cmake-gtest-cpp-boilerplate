@@ -29,7 +29,7 @@ set(SOURCES moduleA.cpp)
 add_library(moduleA ${SOURCES})
 
 # Specify include directories for moduleA
-target_include_directories(moduleA PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}../)
+target_include_directories(moduleA PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../)
 
 # Include unit test
 add_subdirectory(utest)
