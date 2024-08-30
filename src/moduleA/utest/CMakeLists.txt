@@ -30,7 +30,7 @@ add_executable(
 )
 
 # Specify include directories for moduleA
-target_include_directories(utest_moduleA PUBLIC ..\${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(utest_moduleA PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../)
 
 target_link_libraries(
   utest_moduleA
