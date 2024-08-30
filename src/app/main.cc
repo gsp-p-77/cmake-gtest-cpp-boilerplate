@@ -39,5 +39,5 @@ int main(int, char**){
     char * pOutputMessageRef;
     moduleA_function(&pOutputMessageRef);    
     printf(pOutputMessageRef);
-    return 1;
+    return 0;
 }
